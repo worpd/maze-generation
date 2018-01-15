@@ -10,7 +10,7 @@ namespace MazeConsole
             MazeBuilder simpleBuilder = new MazeBuilder();
 
             Random rnd1 = new Random();
-            Maze simpleMaze1 = simpleBuilder.GenerateRandomMaze(31, 31, rnd1);
+            Maze simpleMaze1 = simpleBuilder.GenerateRandomMaze(51, 51, rnd1);
             
             // Random rnd2 = new Random(2);
             // Maze simpleMaze2 = simpleBuilder.GenerateRandomMaze(7, 3, rnd2);
