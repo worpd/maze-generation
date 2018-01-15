@@ -7,11 +7,11 @@ namespace MazeLib
     {
         public int width { get; private set; }
         public int height { get; private set; }
-        public MazeWallCollection walls;
+        public MazeCellCollection walls;
         public Maze(int w, int h) {
             width = w;
             height = h;
-            walls = new MazeWallCollection();
+            walls = new MazeCellCollection();
         }
 
         // Returns whether the cell at coordinates (x, y) is a wall.
@@ -80,10 +80,10 @@ namespace MazeLib
         public MazeExit(Point2D point): base(point) {}
     }
 
-    public class MazeWallCollection
+    public class MazeCellCollection
     {
         private Dictionary<Point2D, MazeWall> walls;
-        public MazeWallCollection()
+        public MazeCellCollection()
         {
             walls = new Dictionary<Point2D, MazeWall>(new Point2D.EqualityComparer());
         }
