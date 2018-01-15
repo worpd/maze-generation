@@ -1,4 +1,5 @@
 MazeLib/obj
+MazeLib/bin
 MazeConsole/obj
 MazeConsole/bin/Debug
 workspace.code-workspace
