@@ -7,16 +7,24 @@ namespace MazeConsole
     {
         static void Main(string[] args)
         {
-            MazeBuilder simpleBuilder = new MazeBuilder();
+            //MazeBuilder simpleBuilder2 = new MazeBuilder();
+            RandomDirectionMazeBuilder simpleBuilder2 = new RandomDirectionMazeBuilder();
 
-            Random rnd1 = new Random();
-            Maze simpleMaze1 = simpleBuilder.GenerateRandomMaze(51, 51, rnd1);
+            //Maze simpleMaze1 = simpleBuilder.GenerateRandomMaze(51, 51, rnd1);
+
+            for (int x = 200; x < 10000; x++)
+            {
+                Random rnd1 = new Random(1);
+                Maze simpleMaze2 = simpleBuilder2.GenerateRandomMaze(51, 51, rnd1, x);
+                MazeConsoleRenderer.renderMaze(simpleMaze2);
+                Console.Read();
+            }
             
             // Random rnd2 = new Random(2);
             // Maze simpleMaze2 = simpleBuilder.GenerateRandomMaze(7, 3, rnd2);
             
-            MazeConsoleRenderer.renderMaze(simpleMaze1);
-            Console.WriteLine("======================");
+            
+            // Console.WriteLine("======================");
             // MazeConsoleRenderer.renderMaze(simpleMaze2);
 
             // Maze testMaze = simpleBuilder.GenerateTestMaze();
