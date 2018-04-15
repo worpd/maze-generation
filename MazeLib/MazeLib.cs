@@ -24,6 +24,10 @@ namespace MazeLib
         {
             walls.addWall(wall);
         }
+        public void removeWall(MazeWall wall)
+        {
+            walls.removeWall(wall);
+        }
     }
 
     public class Point2D
@@ -34,6 +38,38 @@ namespace MazeLib
         {
             this.x = x;
             this.y = y;
+        }
+        public Point2D Up()
+        {
+            return new Point2D(x, y - 1);
+        }
+        public Point2D Down()
+        {
+            return new Point2D(x, y + 1);
+        }
+        public Point2D Left()
+        {
+            return new Point2D(x - 1, y);
+        }
+        public Point2D Right()
+        {
+            return new Point2D(x + 1, y);
+        }
+        public Point2D TopLeft()
+        {
+            return new Point2D(x - 1, y - 1);
+        }
+        public Point2D TopRight()
+        {
+            return new Point2D(x + 1, y - 1);
+        }
+        public Point2D BottomLeft()
+        {
+            return new Point2D(x - 1, y + 1);
+        }
+        public Point2D BottomRight()
+        {
+            return new Point2D(x + 1, y + 1);
         }
         override public string ToString()
         {
@@ -91,6 +127,10 @@ namespace MazeLib
         {
             walls.Add(wall.point, wall);
 
+        }
+        public void removeWall(MazeWall wall)
+        {
+            walls.Remove(wall.point);
         }
         public bool hasWallAt(Point2D point)
         {
