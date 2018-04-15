@@ -29,8 +29,15 @@ namespace MazeLib
             }
 
             List<Point2D> possibleExits = GetPossibleExits(maze);
-            int randomExitIndex = rnd.Next(possibleExits.Count);
-            //maze.removeWall(new MazeWall(possibleExits[randomExitIndex]));
+            if (possibleExits.Count == 0)
+            {
+                Console.WriteLine("Skipping maze exit because we have no possible nearby walls.");
+            }
+            else
+            {
+                int randomExitIndex = rnd.Next(possibleExits.Count);
+                maze.removeWall(new MazeWall(possibleExits[randomExitIndex]));
+            }
 
             return maze;
         }

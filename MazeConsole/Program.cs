@@ -12,9 +12,9 @@ namespace MazeConsole
 
             //Maze simpleMaze1 = simpleBuilder.GenerateRandomMaze(51, 51, rnd1);
 
-            for (int x = 200; x < 10000; x++)
+            for (int x = 1; x < 10000; x++)
             {
-                Random rnd1 = new Random(1);
+                Random rnd1 = new Random();
                 Maze simpleMaze2 = simpleBuilder2.GenerateRandomMaze(51, 51, rnd1, x);
                 MazeConsoleRenderer.renderMaze(simpleMaze2);
                 Console.Read();
